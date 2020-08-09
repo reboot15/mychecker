@@ -18,16 +18,7 @@ function RandomString($length = 23)
     }
     return $randomString;
 }
-function emailGenerate($length = 10)
-{
-    $characters       = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    $charactersLength = strlen($characters);
-    $randomString     = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString . '@gmail.com';
-}
+
 $sec1 = $_GET['sec'];
 extract($_GET);
 $check = str_replace(" ", "", htmlspecialchars($check));
@@ -39,7 +30,7 @@ $yy    = substr($yyyy, 2, 4);
 $cvv   = $i[3];
 $bin   = substr($cc, 0, 8);
 $last4 = substr($cc, 12, 16);
-$email = urlencode(emailGenerate());
+
 $m     = ltrim($mm, "0");
 $name     = RandomString();
 $lastname = RandomString();
