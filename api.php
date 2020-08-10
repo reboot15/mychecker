@@ -8,6 +8,7 @@ function GetStr($string, $start, $end)
     $str = explode($end, $str[1]);
     return $str[0];
 }
+
 function RandomString($length = 23)
 {
     $characters       = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -71,6 +72,7 @@ if ($c["next_action"]["use_stripe_sdk"]["type"] == "three_d_secure_redirect") {
         curl_setopt($ch, CURLOPT_USERPWD, $sec . ':' . '');
         
         $identify = json_decode(curl_exec($ch), true);
+////response
         echo $results;
         curl_close($ch);
         if ($identify["card"]["checks"]["cvc_check"] == "unchecked" || strlen($identify["card"]["checks"]["cvc_check"]) < 1) {
