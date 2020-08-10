@@ -25,7 +25,11 @@
 
   <p align="left">Sk</p> 
    <textarea class="form-control" rows="1" id="sec" placeholder="sk_live_xxxxxxxxxxxxxxx"></textarea>
-  
+  <br>
+<span class="badge badge-danger"><label for="proxy"></label></span>
+<br>
+<textarea class="md-textarea form-control" style="text-align: center;" rows="3" id="proxy" placeholder="PROXY:PORT"></textarea>
+ </center>
 </div>
 </div>
 &nbsp;<br>
@@ -112,22 +116,29 @@ $(document).ready(function(){
 
 </script>
 
-<script title="ajax do checker">
+  <script title="ajax do checker">
     function enviar() {
         var linha = $("#lista").val();
         var linhaenviar = linha.split("\n");
         var total = linhaenviar.length;
         var ap = 0;
         var rp = 0;
+		var rCredits;
         linhaenviar.forEach(function(value, index) {
             setTimeout(
                 function() {
-                    $.ajax({
-                        url: 'api.php?lista=' + value,
-                        type: 'GET',
+                  Array.prototype.randomElement = function () {
+                   return this[Math.floor(Math.random() * this.length)]
+                   }
+                   var pr = $("#proxy").val();
+                   var MyArray = pr.split("\n");
+                   var proxy = MyArray.randomElement();
+                  var sec = $("#sec").val();
+                            $.ajax({
+                        url: 'api.php?lista=' + value + '&sec=' + sec + '&proxy=' + proxy,
                         async: true,
                         success: function(resultado) {
-                            if (resultado.match("#Approved")) {
+                            if (resultado.match("Aprovada")) {
                                 removelinha();
                                 ap++;
                                 aprovadas(resultado + "");
@@ -136,29 +147,34 @@ $(document).ready(function(){
                                 rp++;
                                 reprovadas(resultado + "");
                             }
+
                             $('#carregadas').html(total);
+
                             var fila = parseInt(ap) + parseInt(rp);
                             $('#cLive').html(ap);
                             $('#cDie').html(rp);
                             $('#total').html(fila);
                             $('#cLive2').html(ap);
                             $('#cDie2').html(rp);
-                        }
+						}
                     });
-                }, 1000 * index);
+                }, 50 * index);
         });
     }
+
     function aprovadas(str) {
-        $(".aprovadas").append(str + "<br>");
+        $(".aprovadas").append(str);
     }
     function reprovadas(str) {
-        $(".reprovadas").append(str + "<br>");
+        $(".reprovadas").append(str);
     }
     function removelinha() {
         var lines = $("#lista").val().split('\n');
         lines.splice(0, 1);
         $("#lista").val(lines.join("\n"));
     }
+
+	
 </script>
 
 
