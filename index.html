@@ -3,9 +3,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>[⍋] Sk Checker </title>
-	<link href="reboot13.css" rel="stylesheet" id="bootstrap-css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>[⍋] Sk Checker </title>
+    <link href="reboot13.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
@@ -13,10 +13,10 @@
         <div class="row col-md-12">
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <div class="card col-sm-12">
-  <h5 class="card-body h6"><strong>Reboot13⍉Index</strong></h5>
+  <h5 class="card-body h6"><strong><a href="https://telegram.me//cc_checker" style="text-decoration: none;color:white;">SK Checker</a></strong></h5>
   <div class="card-body">
 <div class="md-form">
-	<div class="col-md-12">
+    <div class="col-md-12">
         <span>Approved:</span>&nbsp<span id="cLive" class="badge badge-success">0</span>
     <span>Declined:</span>&nbsp<span id="cDie" class="badge badge-danger"> 0</span>
     <span>Checked:</span>&nbsp<span id="total" class="badge badge-info">0</span>
@@ -25,32 +25,29 @@
 
   <p align="left">Sk</p> 
    <textarea class="form-control" rows="1" id="sec" placeholder="sk_live_xxxxxxxxxxxxxxx"></textarea>
-  <br>
-<span class="badge badge-success"><label for="proxy">Proxy</label></span>
-<br>
-<textarea class="md-textarea form-control" style="text-align: center;" rows="3" id="proxy" placeholder="PROXY:PORT"></textarea>
+  &nbsp;<br>
+  <center>
+ <button class="btn btn-primary" style="width: 200px; outline: none;" id="testar" onclick="enviar()" >START</button>
+</center>
  </center>
 </div>
 </div>
 &nbsp;<br>
-<center>
- <button class="btn btn-primary" style="width: 200px; outline: none;" id="testar" onclick="enviar()" >START</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <button class="btn btn-danger" style="width: 200px; outline: none;">STOP</button>
-</center>
+
 </div>
 
 
 </div>
 </div>
 </div>
-	</div>
+    </div>
 &nbsp;<br>&nbsp;<br>&nbsp;<br>
 <div class="col-md-12">
 <div class="card">
 <div style="position: absolute;
         top: 0;
         right: 0;">
-	<button id="mostra" class="btn btn-primary">SHOW/HIDE</button>
+    <button id="mostra" class="btn btn-primary">SHOW/HIDE</button>
 </div>
   <div class="card-body">
     <h6 style="font-weight: bold;" class="card-title">Approved - <span  id="cLive2" class="badge badge-success">0</span></h6>
@@ -66,10 +63,10 @@
 
 <div class="col-md-12">
 <div class="card">
-	<div style="position: absolute;
+    <div style="position: absolute;
         top: 0;
         right: 0;">
-	<button id="mostra2" class="btn btn-primary">SHOW/HIDE</button>
+    <button id="mostra2" class="btn btn-primary">SHOW/HIDE</button>
 </div>
   <div class="card-body">
     <h6 style="font-weight: bold;" class="card-title">Declined - <span id="cDie2" class="badge badge-danger">0</span></h6>
@@ -96,7 +93,7 @@
         linhaenviar.forEach(function(value, index) {
             setTimeout(
                 function() {
-          var sec = $("#sec").val();
+          var sec = document.getElementById("sec").value;
                     $.ajax({
                         url: 'api.php?lista=' + value + '&sec=' + sec,
                         type: 'GET',
