@@ -3,7 +3,11 @@ Cc checker
 ![Sk checker](https://i.ibb.co/mR45B4M/Screenshot-1166.png)
 
 
-4 Req Sk Checker - Auth+ Charge + refund
+4 Req Sk Checker - 
+- [x] Auth
+- [x] Charge
+- [x] Refund
+
 
 
 
