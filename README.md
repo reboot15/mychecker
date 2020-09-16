@@ -1,12 +1,9 @@
 # sk-checker
 Cc checker using Stripe secret key
 
+4 Req Sk Checker - Auth+ Charge + refund
 
-Api Credit: Unknown
 
-Index by : Reboot13
-
-[Telegarm- @reboot13](https://t.me/reboot13)
 
 [Support group-@cc_check](https://t.me/cc_check)
 
